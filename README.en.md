@@ -18,5 +18,5 @@ Lựa chọn ngôn ngữ / Select language: [Tiếng Việt](./README.md) / [Eng
 
 ## Table of Contents
 
-- [RISC-V Instruction Set](RISC-V.md)
-- [Tools](RIPES.md)
+- [RISC-V Instruction Set](RISC-V.en.md)
+- [Tools](RIPES.en.md)

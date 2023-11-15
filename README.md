@@ -7,5 +7,5 @@ Lựa chọn ngôn ngữ / Select language: [Tiếng Việt](./README.md) / [Eng
 
 ## Các nội dung chính
 
-- [Kiến trúc RISC-V](RISC-V.md)
-- [Công cụ](RIPES.md)
+- [Kiến trúc RISC-V](RISC-V.vi.md)
+- [Công cụ](RIPES.vi.md)
