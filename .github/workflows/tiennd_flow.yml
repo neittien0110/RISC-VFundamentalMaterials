@@ -1,0 +1,16 @@
+            - name: API Call Action
+  # You may pin to the exact commit or the version.
+  # uses: andreluizmarcelino1/api-call-action@d9838907fcc6fb437ec998141e8d4435f14072dc
+  uses: andreluizmarcelino1/api-call-action@v0.6
+  with:
+    # URL to send request to
+    url: 
+    https://mycel.app:123456/api/projects
+    type: 
+    # JSON string of data to pass into request
+    data: # optional, default is {}
+    # JSON string of headers to pass into request
+    headers: # optional, default is {}
+    # JSON string of query parameters to pass into request
+    params: # optional, default is {}
+          
