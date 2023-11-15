@@ -21,5 +21,5 @@ Contents
 .. toctree::
 
    Home <self>
-   usage
-   api
+   RISC-V
+   Ripes
