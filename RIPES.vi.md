@@ -87,3 +87,17 @@ Ripes thiết lập mặc định vùng bộ nhớ chính chứa **các lệnh c
 
     ![Không hiển thị](images/HideSignalValues.png)
     ![Có hiển thị](images/ShowSignalValues.png)
+
+### Xem địa chỉ các biến số/nhãn lệnh
+
+Mọi biến, mọi hàm, tổng quát hơn là tên của mọi đối tượng, đều được biên dịch thành hằng số địa chỉ, để CPU qua địa chỉ đó tìm được tới vị trí lưu trữ của đối tượng trong bộ nhớ chính. 
+
+Cách thức để xem địa chỉ biến số/nhãn lệnh như sau:
+
+1. Ở cửa sổ **Editor**, trên thanh điều khiển phía trên, chọn nút bấm **Show symbol navigator**.
+2. Ở cửa sổ **Show symbol navigator**, 2 cột:\
+  -Cột **Address** chứa địa chỉ của biến số/nhãn lệnh trong mã máy\
+  -Cột **Symbol** tên gợi nhớ của biến số/nhãn lệnh trong ngôn ngữ lập trình
+![Symbol Navagator](images/symbol_navigator.png)
+
+Bấm nút **Go to symbol** chưa có tác dụng.
