@@ -9,3 +9,4 @@ Lựa chọn ngôn ngữ / Select language: [Tiếng Việt](./README.md) / [Eng
 
 - [Kiến trúc RISC-V](RISC-V.vi.md)
 - [Công cụ](RIPES.vi.md)
+- [Các bộ xử lý, vi điều khiển, Dev-Kit sử dụng kiến trúc RISC-V](https://github.com/neittien0110/MCU)
