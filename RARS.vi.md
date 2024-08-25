@@ -72,101 +72,121 @@ Mỗi file mã nguồn ở giao diện soạn thảo có 2 cửa sổ (2 tab): E
 5.	Để biên dịch chương trình hợp ngữ trên thành mã máy, thực hiện một trong các cách sau:
 -	Vào menu **Run / Assemble**.
 -	Trên thanh menu, bấm vào biểu tượng ![setting](https://github.com/user-attachments/assets/6444a212-9eb0-4ee7-8568-29ac6467df31)
-
--	Bấm phím tắt F3.
-
+-	Bấm phím tắt **F3**.
+  
 6.	Nếu đoạn hợp ngữ đúng, RARS sẽ chuyển từ Edit tab sang Execute tab.
- 
+ 	![Execution tab](https://github.com/user-attachments/assets/7873c5c5-e7e1-40ce-8013-e797b8d09fcd)
 
-Chú ý: nếu đoạn hợp ngữ có lỗi, cửa sổ Messages sẽ hiển thị chi tiết lỗi. Bấm vào dòng thông báo lỗi để trình soạn thảo tự động nhảy tới dòng code bị lỗi, rồi tiến hành sửa lại cho đúng.
- 
+> Chú ý: nếu đoạn hợp ngữ có lỗi, cửa sổ Messages sẽ hiển thị chi tiết lỗi. Bấm vào dòng thông báo lỗi để trình soạn thảo tự động nhảy tới dòng code bị lỗi, rồi tiến hành sửa lại cho đúng.
+> ![image](https://github.com/user-attachments/assets/8d2ccde2-dfbe-41fa-8276-ce29c6dc8edf)
 
-7.	Ở Execute tab, có 2 cửa số chính là Text Segment, và Data Segment
- 
-•	Text Segment: là vùng không gian bộ nhớ chứa các mã lệnh hợp ngữ. Tương ứng với mã nguồn hợp ngữ, các dòng nào viết sau chỉ thị  .text tức là lệnh và sẽ thuộc Text Segment.
-•	Data Segment: là vùng không gian bộ nhớ chứa các biến. Tương ứng với mã nguồn hợp ngữ, các dòng nào viết sau chỉ thị  .data tức là lệnh và sẽ thuộc Data Segment.
-Chú ý: vì lý do nào đó, nếu ta khai báo biến sau chỉ thị .text hoặc ngược lại thì trình biên dịch sẽ báo lỗi hoặc bỏ qua khai báo sai đó.
+ 7.	Ở **Execute** tab, có 2 cửa số chính là **Text Segment**, và **Data Segment**.
+ ![Text Segment và Data Segment](https://github.com/user-attachments/assets/2182441f-38ea-49cc-9cdf-932673c160c5)
 
-8.	Ở Execute tab, sử dụng checkbox bên dưới để thay đổi cách hiển thị dữ liệu cho dễ quan sát
-•	 : hiển thị địa chỉ ở dạng số nguyên hệ 16
-•	 : hiển thị giá trị thanh ghi ở dạng số nguyên hệ 16
-•	 : hiển thị giá trị trong bộ nhớ ở dạng kí tự ASCII
- 
+- **Text Segment**: là vùng không gian bộ nhớ chứa các mã lệnh hợp ngữ. Tương ứng với mã nguồn hợp ngữ, các dòng nào viết sau chỉ thị  **.text** tức là lệnh và sẽ thuộc **Text Segment**.
+- **Data Segment**: là vùng không gian bộ nhớ chứa các biến. Tương ứng với mã nguồn hợp ngữ, các dòng nào viết sau chỉ thị  **.data** tức là lệnh và sẽ thuộc **Data Segment**.
 
-9.	Ở Execute tab, trong cửa sổ Text Segment, bảng có 4 cột.
- 
-•	Bkpt: Breakpoint, điểm dừng khi chạy toàn bộ chương trình bằng nút  .
-•	Address: địa chỉ của lệnh ở dạng số nguyên (xem thêm hướng dẫn về cửa sổ Label)
-•	Code: lệnh ở dạng mã máy 
-•	Basic: lệnh ở dạng hợp ngữ thuần, giống như qui định trong tập lệnh. Ở đây, tất cả các nhãn, tên gợi nhớ … đều đã được chuyển đổi thành hằng số.
-•	Source: lệnh ở dạng hợp ngữ có bổ sung các macro, nhãn ... giúp lập trình nhanh hơn, dễ hiểu hơn, không còn giống như tập lệnh nữa. Trong ảnh minh họa bên dưới:
-i.	Lệnh la trong cột Source là lệnh giả, không có trong tập lệnh  được dịch tương ứng thành 2 lệnh auipc và addi trong cột Basic.
-ii.	Nhãn msg trong lệnh la a0, msg trong cột Source  địa chỉ của nhãn được thay bằng tham số cho lệnh auipc và addi.
-10.	Ở Execute tab, trong cửa sổ Data Segment, bảng có 9 cột
- 
-•	Address: địa chỉ của dữ liệu, biến ở dạng số nguyên. Giá trị mỗi dòng tăng 32 đơn vị (ở hệ 10, hoặc 20(16)) bởi vì mỗi dòng sẽ trình bày 32 bytes ở các địa chỉ liên tiếp nhau
-•	Các cột Value: mỗi cột chứa 4 byte, và có 8 cột, tương ứng với 32 bytes liên tiếp nhau.
-Trong hình ảnh trên, có thể thấy rõ giá trị của biến x = 0x01020304 được hiển thị chính xác trong Data Segment khi hiển thị dữ liệu ở dạng số  , và giá trị của chuỗi “Truong Cong nghe thong tin va Truyen thong” khi hiển thị ở dạng kí tự  . Lưu ý rằng việc lưu trữ chuỗi trong bộ nhớ ở dạng little-endian là do cách lập trình hàm phần mềm syscall, chứ không phải do bộ xử lý MIPS qui định. Có thể thấy, công cụ giả lập lại qui định chuỗi theo kiểu big-endian.
+> Chú ý: vì lý do nào đó, nếu ta khai báo biến sau chỉ thị .text hoặc ngược lại thì trình biên dịch sẽ báo lỗi hoặc bỏ qua khai báo sai đó.
 
-Bấm vào cặp nút    để dịch chuyển tới vùng địa chỉ lân cận.
+8.	Ở **Execute** tab, sử dụng checkbox bên dưới để thay đổi cách hiển thị dữ liệu cho dễ quan sát
+- ![image](https://github.com/user-attachments/assets/83a44f25-4779-4189-bbb4-fd2879cdfd48): hiển thị địa chỉ ở dạng số nguyên hệ 16
+- ![image](https://github.com/user-attachments/assets/bcf5b032-a545-4f91-8d6b-c5f36f977afe): hiển thị giá trị thanh ghi ở dạng số nguyên hệ 16
+- ![image](https://github.com/user-attachments/assets/b79db8fc-4d37-46e5-9fb7-ca407026c804): hiển thị giá trị trong bộ nhớ ở dạng kí tự ASCII
+
+![image](https://github.com/user-attachments/assets/2587a119-834e-48d4-9d4d-aede6ba8e7a9)
+
+
+9.	Ở Execute tab, trong cửa sổ **Text Segment**, bảng có 4 cột.
+
+ ![Text Segment](https://github.com/user-attachments/assets/21b57718-7675-4312-bef0-15915305c227)
+
+- **Bkpt**: Breakpoint, điểm dừng khi chạy toàn bộ chương trình bằng nút  .
+- **Address**: địa chỉ của lệnh ở dạng số nguyên (xem thêm hướng dẫn về cửa sổ Label)
+- **Code**: lệnh ở dạng mã máy 
+- **Basic**: lệnh ở dạng hợp ngữ thuần, giống như qui định trong tập lệnh. Ở đây, tất cả các nhãn, tên gợi nhớ … đều đã được chuyển đổi thành hằng số.
+-	**Source**: lệnh ở dạng hợp ngữ có bổ sung các macro, nhãn ... giúp lập trình nhanh hơn, dễ hiểu hơn, không còn giống như tập lệnh nữa. Trong ảnh minh họa bên dưới:
+  - Lệnh **la** trong cột Source là lệnh giả, không có trong tập lệnh  được dịch tương ứng thành 2 lệnh **auipc** và **addi** trong cột Basic.
+  - Nhãn **msg** trong lệnh la a0, msg trong cột Source  địa chỉ của nhãn được thay bằng tham số cho lệnh **auipc** và **addi**.
+
+10.	Ở **Execute** tab, trong cửa sổ **Data Segment**, bảng có 9 cột
+
+![Data Segment](https://github.com/user-attachments/assets/7945bb6e-5553-42bd-a855-952499341dc6)
+
+- **Address**: địa chỉ của dữ liệu, biến ở dạng số nguyên. Giá trị mỗi dòng tăng 32 đơn vị (ở hệ 10, hoặc 20(16)) bởi vì mỗi dòng sẽ trình bày 32 bytes ở các địa chỉ liên tiếp nhau
+- Các cột **Value**: mỗi cột chứa 4 byte, và có 8 cột, tương ứng với 32 bytes liên tiếp nhau.
+
+Trong hình ảnh trên, có thể thấy rõ giá trị của biến _x = 0x01020304_ được hiển thị chính xác trong Data Segment khi hiển thị dữ liệu ở dạng số ![image](https://github.com/user-attachments/assets/1366314c-5c78-400c-a0af-3d0ecfd28827), và giá trị của chuỗi _“Truong Cong nghe thong tin va Truyen thong”_ khi hiển thị ở dạng kí tự ![image](https://github.com/user-attachments/assets/103ed9f0-4d3a-4205-9119-9053889166a0).
+
+> Lưu ý rằng việc lưu trữ chuỗi trong bộ nhớ ở dạng little-endian là do cách lập trình hàm phần mềm ecalll, chứ không phải do bộ xử lý RISC-V qui định. Có thể thấy, công cụ giả lập qui định hiển thị chuỗi theo kiểu big-endian.
+
+Bấm vào cặp nút ![image](https://github.com/user-attachments/assets/c498b601-8fda-45c8-9bbc-2c51cb16c9de) để dịch chuyển tới vùng địa chỉ lân cận.
 
 Bấm vào ComboBox để dịch tới vùng bộ nhớ chứa loại dữ liệu được chỉ định. Trong đó lưu ý:
-o	.data: vùng dữ liệu
-o	.text: vùng lệnh
-o	sp: vùng ngăn xếp
+- .data: vùng dữ liệu
+- .text: vùng lệnh
+-	sp: vùng ngăn xếp
 
+![image](https://github.com/user-attachments/assets/46cde97e-6534-44f5-b403-73ae9d146e6f)
 
-
-11.	Cửa sổ Label: hiển thị tên nhãn và hằng số địa chỉ tương ứng với nhãn khi được biên dịch ra mã máy.
-Cửa sổ Label không tự động hiển thị. Vào menu Settings / chọn Show Labels Windows để bật tắt hiển thị cửa sổ Label.
+11.	Cửa sổ **Label**: hiển thị tên nhãn và hằng số địa chỉ tương ứng với nhãn khi được biên dịch ra mã máy.
+Cửa sổ **Label** không tự động hiển thị. Vào menu **Settings** / chọn **Show Labels Windows** để bật tắt hiển thị cửa sổ **Label**.
 Trong ảnh sau, ta thấy các thông tin quan trọng:
--	Trong cửa số Labels cho biết:
-o	x chỉ là tên gợi nhớ, x sẽ được qui đổi thành hằng số 0x10010000.
-o	msg cũng chỉ là tên gợi nhớ, sẽ được qui đổi thành hằng số 0x10010004
-o	Click đúp vào tên biến, sẽ tự động chuyển sang vị trí tương ứng trong cửa sổ Data Segment.
--	Trong cửa sổ Text Segment cho biết:
-o	Ở lệnh gán la a0, msg tên gợi nhớ msg đã được chuyển thành hằng số 0x10010004 thông qua cặp lệnh auipc và addi.
--	Trong cửa sổ Data Segment cho biết:
-o	Để giám sát giá trị của biến x, ta mở Data Segment ở hằng số 0x10010000 sẽ nhìn thấy giá trị của x.
-o	Để giám sát giá trị của biến msg, ta mở Data Segment ở hằng số 0x10010004 sẽ nhìn thấy giá trị của msg.
+-	Trong cửa số **Labels** cho biết:
+  - **x** chỉ là tên gợi nhớ, **x** sẽ được qui đổi thành hằng số _0x10010000_.
+  - **msg** cũng chỉ là tên gợi nhớ, sẽ được qui đổi thành hằng số _0x10010004_.
+  -	Click đúp vào tên biến, sẽ tự động chuyển sang vị trí tương ứng trong cửa sổ **Data Segment**.
+-	Trong cửa sổ **Text Segment** cho biết:
+  - Ở lệnh gán **la a0**, msg tên gợi nhớ msg đã được chuyển thành hằng số _0x10010004_ thông qua cặp lệnh **auipc** và **addi**.
+-	Trong cửa sổ **Data Segment** cho biết:
+  - Để giám sát giá trị của biến **x**, ta mở **Data Segment** ở hằng số _0x10010000_ sẽ nhìn thấy giá trị của x.
+  - Để giám sát giá trị của biến **msg**, ta mở **Data Segment** ở hằng số _0x10010004_ sẽ nhìn thấy giá trị của msg.
  
+## Chạy giả lập 
 
-Chạy giả lập 
-1.	Tiếp tục chạy chương trình Hello World ở trên.
-
-2.	Sử dụng slider bar để thay đổi tốc độ thực thi lệnh hợp ngữ.
+1.	Tiếp tục chạy chương trình **Hello World** ở trên.
+2.	Sử dụng slider bar để thay đổi tốc độ thực thi lệnh hợp ngữ.\
+ ![slider](https://github.com/user-attachments/assets/14c334a6-d144-4836-9c3c-fda87d884c6b)
+  Mặc định, tốc độ thực thi là tối đa, và ở mức này, ta không thể can thiệp được nhiều vào quá trình hoạt động của các lệnh và kiểm soát chúng. Có thể dịch chuyển slider bar vể khoảng 2 lệnh/giây để dễ quan sát.
+3.	Ở **Execute** tab, chọn cách để thực thi chương trình
+  - Bấm vào icon ![image](https://github.com/user-attachments/assets/97351a1e-d41b-43f9-b5a0-1a739f6252ed), **Run**, để thực hiện toàn bộ chương trình. Khi sử dụng Run, ta quan sát dòng lệnh được tô màu vàng cho biết chương trình hợp ngữ đang được xử lý tới chỗ nào. Đồng thời, quan sát sự biến đổi dữ liệu trong cửa sổ Data Segment và cửa sổ Registers.
+  - Bấm vào icon ![image](https://github.com/user-attachments/assets/f46734a3-864f-44b8-a25a-69cc24e1ca02), **Reset**, để khởi động lại trình giả lập về trạng thái ban đầu. Tất cả các ngăn nhớ và các thanh ghi đều được gán lại về 0.
+  - Bấm vào icon ![image](https://github.com/user-attachments/assets/085d914f-6003-462d-9e18-891a59df8ba6), **Run one step**, để thực thi chỉ duy nhất 1 lệnh rồi chờ bấm tiếp vào icon đó, để thực hiện lệnh kế tiếp.
+  - Bấm vào icon ![image](https://github.com/user-attachments/assets/e3b17ac8-d811-4ac9-a756-846b1634b2ab), **Run one step backwards**, để khôi phục lại trạng thái và quay trở lại lệnh đã thực thi trước đó.
+  -	Sau khi chạy xong tất cả các lệnh của ví dụ Hello Word, sẽ thấy cửa sổ **Run I/O** hiển thị chuỗi.
+    ![image](https://github.com/user-attachments/assets/a7f65e47-6ea8-48d9-b9b1-8e9adaa8322d)
  
-Mặc định, tốc độ thực thi là tối đa, và ở mức này, ta không thể can thiệp được nhiều vào quá trình hoạt động của các lệnh và kiểm soát chúng. Có thể dịch chuyển slider bar vể khoảng 2 lệnh/giây để dễ quan sát.
+## Giả lập & gỡ rối: Quan sát sự thay đổi của các biến
 
-3.	Ở Execute tab, chọn cách để thực thi chương trình
-•	Bấm vào icon  , Run, để thực hiện toàn bộ chương trình. Khi sử dụng Run, ta quan sát dòng lệnh được tô màu vàng cho biết chương trình hợp ngữ đang được xử lý tới chỗ nào. Đồng thời, quan sát sự biến đổi dữ liệu trong cửa sổ Data Segment và cửa sổ Registers.
-•	Bấm vào icon  , Reset, để khởi động lại trình giả lập về trạng thái ban đầu. Tất cả các ngăn nhớ và các thanh ghi đều được gán lại về 0.
-•	Bấm vào icon  , Run one step, để thực thi chỉ duy nhất 1 lệnh rồi chờ bấm tiếp vào icon đó, để thực hiện lệnh kế tiếp.
-•	Bấm vào icon  , Run one step backwards, để khôi phục lại trạng thái và quay trở lại lệnh đã thực thi trước đó.
+Trong quá trình chạy giả lập, hãy chạy từng lệnh với chức năng **Run one step**. Ở mỗi lệnh, quan sát sự thay đổi giá trị trong cửa sổ **Data Segment** và cửa sổ **Registers**, và hiểu rõ ý nghĩa của sự thay đổi đó.
 
-•	Sau khi chạy xong tất cả các lệnh của ví dụ Hello Word, sẽ thấy cửa sổ Run I/O hiển thị chuỗi.
- 
-Giả lập & gỡ rối: Quan sát sự thay đổi của các biến
-Trong quá trình chạy giả lập, hãy chạy từng lệnh với chức năng Run one step. Ở mỗi lệnh, quan sát sự thay đổi giá trị trong cửa sổ Data Segment và cửa sổ Registers, và hiểu rõ ý nghĩa của sự thay đổi đó.
-Giả lập & gỡ rối: Thay đổi giá trị biến khi đang chạy run-time
+## Giả lập & gỡ rối: Thay đổi giá trị biến khi đang chạy run-time
+
 Trong khi đang chạy giả lập, ta có thể thay đổi giá trị của một ngăn nhớ bất kì bằng cách
-1.	Trong Data Segment, click đúp vào một ngăn nhớ bất kì.
- 
-2.	Nhập giá trị mới.
- 
-3.	Tiếp tục chạy chương trình.
-Giả lập & gỡ rối: Thay đổi giá trị thanh ghi khi đang chạy run-time
-Cách làm tương tự như thay đổi giá trị của biến, áp dụng cho cửa sổ Registers.
+- Trong **Data Segment**, click đúp vào một ngăn nhớ bất kì.\
+ ![image](https://github.com/user-attachments/assets/b04f38f0-cf14-43f8-9f2d-3f4fdc06bd2d)
+
+2.	Nhập giá trị mới.\
+  ![image](https://github.com/user-attachments/assets/e279a9ec-d5db-4569-bead-c445beb394f8)
+
+3. Tiếp tục chạy chương trình.
+
+## Giả lập & gỡ rối: Thay đổi giá trị thanh ghi khi đang chạy run-time
+
+Cách làm tương tự như thay đổi giá trị của biến, áp dụng cho cửa sổ Registers.\
+![image](https://github.com/user-attachments/assets/b0da9522-a8b1-4bf4-bff4-b3f72d7dcfd5)
  
 
-Tra cứu Help
-Bâm nút Help   để xem giải thích các lệnh của RISC-V, các giả lệnh, chỉ dẫn biên dịch và các hàm dịch vụ hệ thống.
+## Tra cứu Help
 
-Các hằng địa chỉ 
-Chọn menu Settings / Memory Configuration…
-Cửa sổ Memory Configuration chứa bảng qui định các hằng địa chỉ mà công cụ RARS sử dụng.
+Bâm nút Help ![image](https://github.com/user-attachments/assets/097a722a-ce5c-4768-a843-7cbe701195e2) để xem giải thích các lệnh của RISC-V, các giả lệnh, chỉ dẫn biên dịch và các hàm dịch vụ hệ thống.
 
-Theo bảng này, có thể thấy các mã lệnh luôn bắt đầu từ địa chỉ 0x00400000, còn dữ liệu luôn bắt đầu từ địa chỉ 0x10000000.
+## Các hằng địa chỉ
+
+Chọn menu **Settings / Memory Configuration…**
+Cửa sổ **Memory Configuration** chứa bảng qui định các hằng địa chỉ mà công cụ RARS sử dụng.
+
+Theo bảng này, có thể thấy các mã lệnh luôn bắt đầu từ địa chỉ _0x00400000_, còn dữ liệu luôn bắt đầu từ địa chỉ _0x10000000_.
+![image](https://github.com/user-attachments/assets/75579c26-d6a7-400f-a321-da87aa2ccd7c)
 
  
 
