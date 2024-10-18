@@ -11,3 +11,9 @@ Lựa chọn ngôn ngữ / Select language: [Tiếng Việt](./README.md) / [Eng
 - [Công cụ lập trình và giả lập RIPES](RIPES.vi.md)
 - [Công cụ lập trình và giả lập RARS](RARS.vi.md)
 - [Các bộ xử lý, vi điều khiển, Dev-Kit sử dụng kiến trúc RISC-V](https://neittien0110.github.io/MCU)
+
+## Khác
+
+- [File excel macro để dịch 1 lệnh đơn asm thành mã máy. Ghi rõ từng bước biến đổi](risc-v-design.xlsm)
+  ![image](https://github.com/user-attachments/assets/ce037f8e-817c-4d4a-a0c7-4341c1100c25)
+
