@@ -14,6 +14,6 @@ Lựa chọn ngôn ngữ / Select language: [Tiếng Việt](./README.md) / [Eng
 
 ## Khác
 
-- [File excel macro để dịch 1 lệnh đơn asm thành mã máy. Ghi rõ từng bước biến đổi](risc-v-design.xlsm)
+- [File excel macro để dịch 1 lệnh đơn asm thành mã máy. Ghi rõ từng bước biến đổi](https://github.com/neittien0110/RISC-VFundamentalMaterials/blob/master/RISC-V-Design.xlsm)
   ![image](https://github.com/user-attachments/assets/ce037f8e-817c-4d4a-a0c7-4341c1100c25)
 
