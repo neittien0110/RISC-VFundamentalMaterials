@@ -180,6 +180,8 @@ Cách làm tương tự như thay đổi giá trị của biến, áp dụng cho
 - Giả lập led 7 đoạn và bàn phím ma trận
 ![Giả lập led 7 đoạn và bàn phím ma trận](https://github.com/user-attachments/assets/357e5ea5-c6a6-4398-893d-5d7bc48743ac)
 
+- Ví dụ:\
+  ![Lập trình led 7 đoạn](https://github.com/user-attachments/assets/be6321c7-fda1-43fb-a473-8db7293637e7)
 
 
 ## Tra cứu Help
