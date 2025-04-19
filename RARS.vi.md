@@ -174,7 +174,15 @@ Trong khi đang chạy giả lập, ta có thể thay đổi giá trị của m�
 
 Cách làm tương tự như thay đổi giá trị của biến, áp dụng cho cửa sổ Registers.\
 ![image](https://github.com/user-attachments/assets/b0da9522-a8b1-4bf4-bff4-b3f72d7dcfd5)
- 
+
+## Giả lập vào ra
+
+- Giả lập led 7 đoạn và bàn phím ma trận
+![Giả lập led 7 đoạn và bàn phím ma trận](https://github.com/user-attachments/assets/357e5ea5-c6a6-4398-893d-5d7bc48743ac)
+
+- Ví dụ:\
+  ![Lập trình led 7 đoạn](https://github.com/user-attachments/assets/be6321c7-fda1-43fb-a473-8db7293637e7)
+
 
 ## Tra cứu Help
 
